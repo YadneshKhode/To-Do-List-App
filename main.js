@@ -9,9 +9,13 @@ let selectedListID = JSON.parse(
   localStorage.getItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY)
 );
 const deleteListButton = document.querySelector("[data-delete-list-button]");
-const listDisplaycontainer = document.querySelector(
+const listDisplayContainer = document.querySelector(
   "[data-list-display-container]"
 );
+const listDisplayParentContainer = document.querySelector(
+  "[data-list-display-parent-container]"
+);
+
 const listTitleElement = document.querySelector("[data-list-title]");
 const listCountElement = document.querySelector("[data-list-count]");
 const tasksContainer = document.querySelector("[data-tasks]");
@@ -116,9 +120,9 @@ function render() {
   const selectedList = lists.find((list) => list.id === selectedListID);
   // console.log(selectedList);
   if (selectedListID == null) {
-    listDisplaycontainer.style.display = "none";
+    listDisplayParentContainer.style.display = "none";
   } else {
-    listDisplaycontainer.style.display = "";
+    listDisplayParentContainer.style.display = "";
     listTitleElement.innerText = selectedList.name;
     renderTaskCount(selectedList);
     clearElement(tasksContainer);
