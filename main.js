@@ -118,7 +118,6 @@ function render() {
   clearElement(listsContainer);
   renderlists();
   const selectedList = lists.find((list) => list.id === selectedListID);
-  // console.log(selectedList);
   if (selectedListID == null) {
     listDisplayParentContainer.style.display = "none";
   } else {

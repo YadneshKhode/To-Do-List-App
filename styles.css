@@ -160,7 +160,7 @@ input[type="checkbox"] {
       -ms-flex-pack: start;
           justify-content: flex-start;
   background-color: white;
-  color: black;
+  color: var(--clr-primary);
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -305,7 +305,7 @@ input[type="checkbox"] {
   letter-spacing: 1px;
   font-size: 1rem;
   background-color: white;
-  color: black;
+  color: var(--clr-primary);
   border-radius: 20px;
   padding: 10px 1.5rem;
   -webkit-transition: color 200ms ease-in-out, -webkit-transform 250ms ease-out;
