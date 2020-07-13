@@ -153,6 +153,7 @@ input[type="checkbox"] {
           justify-content: space-between;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  position: relative;
 }
 
 .todo-list {
@@ -350,6 +351,16 @@ input[type="checkbox"] {
   font-size: 0.8rem;
   margin-top: 1rem;
   color: inherit;
+}
+
+.close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--clr-primary);
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 1024px) {

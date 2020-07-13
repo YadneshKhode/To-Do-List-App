@@ -31,6 +31,7 @@ const taskCreatorButton = document.querySelector(
 const listCreatorButton = document.querySelector(
   "[data-plus-button-list-creator]"
 );
+const close=document.querySelector(".close");
 
 //  let selectedListID = 0;
 /***************************  DECLARATIONS END ******************************/
@@ -45,7 +46,7 @@ listCreatorButton.addEventListener("click", (e) => {
 });
 listsContainer.addEventListener("click", (e) => {
   selectedListID = e.target.closest(".list-name").dataset.listId;
-  // console.log(selectedListID);
+  console.log(selectedListID);
   saveAndRender();
   // if (e.target.tagName.toLowerCase() === "li") {
   //   selectedListID = e.target.dataset.listId;
@@ -65,7 +66,7 @@ taskCreatorButton.addEventListener("click", (e) => {
   addNewTask(e);
 });
 tasksContainer.addEventListener("click", (e) => {
-  console.log(e.target);
+  // console.log(e.target);
   if (e.target.tagName.toLowerCase() === "input") {
     const selectedList = lists.find((list) => list.id === selectedListID);
     const selectedTask = selectedList.tasks.find(
@@ -81,6 +82,10 @@ clearCompleteTasksButton.addEventListener("click", (e) => {
   selectedList.tasks = selectedList.tasks.filter((task) => !task.complete);
   saveAndRender();
 });
+close.addEventListener("click",() => {
+    listDisplayParentContainer.style.display = "none";
+    document.querySelector(".active-list").classList.remove("active-list");
+})
 /***************************  EVENT LISTENERS END ******************************/
 
 /***************************  FUNCTIONS START ******************************/
@@ -161,7 +166,7 @@ function addNewList(e) {
   e.preventDefault();
   let listName = newListInput.value;
   listName = listName.trim();
-  console.log(listName);
+  // console.log(listName);
   if (listName === "" || listName == null) return;
   const list = createList(listName);
   newListInput.value = null;
@@ -172,7 +177,7 @@ function addNewTask(e) {
   e.preventDefault();
   let taskName = newTaskInput.value;
   taskName = taskName.trim();
-  console.log(taskName);
+  // console.log(taskName);
 
   if (taskName === "" || taskName == null) return;
   const task = createTask(taskName);
