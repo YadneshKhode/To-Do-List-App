@@ -38,6 +38,13 @@ input[type="checkbox"] {
   position: absolute;
 }
 
+.all-tasks {
+  box-shadow: 0 0 10px 0;
+  padding: 20px;
+  border-radius: 20px;
+  height: fit-content;
+}
+
 /*for wrapper*/
 .wrapper {
   max-width: 1360px;
@@ -105,6 +112,8 @@ input[type="checkbox"] {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-top-left-radius:20px;
+  border-top-right-radius:20px;
 }
 
 .todo-list {
@@ -112,7 +121,9 @@ input[type="checkbox"] {
   background-color: white;
   color: black;
   height: fit-content;
+  border-radius: 20px;
 }
+
 
 .btn {
   background: transparent;
@@ -195,19 +206,27 @@ input[type="checkbox"] {
 }
 
 .delete-stuff {
-  position: absolute;
+  // position: absolute;
   bottom: -130px;
   color: #e4e4e4;
   display: flex;
   justify-content: space-between;
   left: 0;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-
+.parent-todo-list {
+  box-shadow: 0 0 10px 0 white;
+  padding: 10px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .btn.delete {
@@ -222,6 +241,7 @@ input[type="checkbox"] {
   transition: color 200ms ease-in-out, transform 250ms ease-out;
   margin-bottom: 1rem;
   width: 100%;
+  margin: 10px;
 }
 
 .task::after {
@@ -247,11 +267,18 @@ input[type="checkbox"] {
   transition: transform 250ms ease-in-out;
 }
 
+.note {
+  display: inline-block;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  color: inherit;
+}
+
 @media only screen and (min-width: 1024px) {
 
   .btn.delete:hover {
     color: crimson;
-    transform: scale(1.1);
+    transform: scale(1.03);
   }
 
   .btn.delete:focus {
@@ -262,7 +289,8 @@ input[type="checkbox"] {
     opacity: 0.7;
     transform: scale(1.1);
   }
-  .btn.create:focus{
+
+  .btn.create:focus {
     outline: none;
   }
 
@@ -276,6 +304,10 @@ input[type="checkbox"] {
 @media only screen and (max-width: 995px) {}
 
 @media only screen and (max-width: 767px) {
+  .parent-todo-list {
+    margin-top: 5rem;
+  }
+
   .parent {
     flex-direction: column;
     justify-content: center;
@@ -284,19 +316,21 @@ input[type="checkbox"] {
   }
 
   .todo-list {
-    margin-top: 5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
     width: 80%;
   }
 
   .all-tasks {
     align-items: center;
+    margin-top: 1.2rem;
   }
 
 }
 
 @media only screen and (max-width: 540px) {
   .btn.delete {
-  font-size: 0.7rem;
+    font-size: 0.7rem;
   }
 
 }

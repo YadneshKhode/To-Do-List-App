@@ -52,6 +52,16 @@ input[type="checkbox"] {
   position: absolute;
 }
 
+.all-tasks {
+  -webkit-box-shadow: 0 0 10px 0;
+          box-shadow: 0 0 10px 0;
+  padding: 20px;
+  border-radius: 20px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 /*for wrapper*/
 .wrapper {
   max-width: 1360px;
@@ -141,6 +151,8 @@ input[type="checkbox"] {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .todo-list {
@@ -152,6 +164,7 @@ input[type="checkbox"] {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  border-radius: 20px;
 }
 
 .btn {
@@ -245,7 +258,6 @@ input[type="checkbox"] {
 }
 
 .delete-stuff {
-  position: absolute;
   bottom: -130px;
   color: #e4e4e4;
   display: -webkit-box;
@@ -267,6 +279,26 @@ input[type="checkbox"] {
   justify-content: space-between;
 }
 
+.parent-todo-list {
+  -webkit-box-shadow: 0 0 10px 0 white;
+          box-shadow: 0 0 10px 0 white;
+  padding: 10px;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .btn.delete {
   font-weight: 700;
   opacity: 0.7;
@@ -282,6 +314,7 @@ input[type="checkbox"] {
   transition: color 200ms ease-in-out, transform 250ms ease-out, -webkit-transform 250ms ease-out;
   margin-bottom: 1rem;
   width: 100%;
+  margin: 10px;
 }
 
 .task::after {
@@ -312,11 +345,18 @@ input[type="checkbox"] {
   transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
 }
 
+.note {
+  display: inline-block;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  color: inherit;
+}
+
 @media only screen and (min-width: 1024px) {
   .btn.delete:hover {
     color: crimson;
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(1.03);
+            transform: scale(1.03);
   }
   .btn.delete:focus {
     outline: none;
@@ -338,6 +378,9 @@ input[type="checkbox"] {
 }
 
 @media only screen and (max-width: 767px) {
+  .parent-todo-list {
+    margin-top: 5rem;
+  }
   .parent {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -352,13 +395,15 @@ input[type="checkbox"] {
     width: 100%;
   }
   .todo-list {
-    margin-top: 5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
     width: 80%;
   }
   .all-tasks {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    margin-top: 1.2rem;
   }
 }
 

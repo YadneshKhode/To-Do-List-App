@@ -156,7 +156,7 @@ function renderTask(selectedList) {
 }
 function addNewList(e) {
   e.preventDefault();
-  const listName = newListInput.value;
+  let listName = newListInput.value;
   listName = listName.trim();
   console.log(listName);
   if (listName === "" || listName == null) return;
@@ -167,7 +167,7 @@ function addNewList(e) {
 }
 function addNewTask(e) {
   e.preventDefault();
-  const taskName = newTaskInput.value;
+  let taskName = newTaskInput.value;
   taskName = taskName.trim();
   console.log(taskName);
 

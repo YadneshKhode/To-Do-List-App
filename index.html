@@ -19,7 +19,6 @@
       
     <div class="all-tasks">
       <h2 class="task-list-title">My Lists</h2>
-      <span><p>CLICK ON LIST NAME </p></span>
       <ul class="task-list" data-lists>
         <!-- <li class="list-name active-list">Youtube</li> -->
       </ul>
@@ -34,8 +33,9 @@
         />
         <button class="btn create" aria-label="create new list"  type="button" data-plus-button-list-creator>+</button>
       </form>
+      <span class = "note"><p>CLICK ON LIST NAME TO ADD TASKS</p></span>
     </div>
-
+<div class="parent-todo-list">
     <div class="todo-list" data-list-display-container>
       <div class="todo-header">
         <h2 class="list-title" data-list-title>YouTube</h2>
@@ -59,14 +59,19 @@
               </form>
         </div>
 
-        <div class="delete-stuff">
-          <button class="btn delete" data-clear-complete-tasks-button>Clear completed tasks</button>
-          <button class="btn delete" data-delete-list-button>Delete list</button>
-        </div>
+       
+      </div>
+    
+      </div>
+      <div class="delete-stuff">
+        <button class="btn delete" data-clear-complete-tasks-button>Clear completed tasks</button>
+        <button class="btn delete" data-delete-list-button>Delete list</button>
       </div>
     </div>
   </div>
+  
     </div>
+  
     <!-- <template>
       <div class="task">
         <input 
@@ -80,7 +85,7 @@
       </div>
      
     </template> for refernce -->
-
+   
     <template id = "task-template">
       <div class="task">
         <input 
