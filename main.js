@@ -157,6 +157,8 @@ function renderTask(selectedList) {
 function addNewList(e) {
   e.preventDefault();
   const listName = newListInput.value;
+  listName = listName.trim();
+  console.log(listName);
   if (listName === "" || listName == null) return;
   const list = createList(listName);
   newListInput.value = null;
@@ -166,6 +168,9 @@ function addNewList(e) {
 function addNewTask(e) {
   e.preventDefault();
   const taskName = newTaskInput.value;
+  taskName = taskName.trim();
+  console.log(taskName);
+
   if (taskName === "" || taskName == null) return;
   const task = createTask(taskName);
   newTaskInput.value = null;
