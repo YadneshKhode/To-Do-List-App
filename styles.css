@@ -358,7 +358,7 @@ input[type="checkbox"] {
   top: 0.5rem;
   right: 1.5rem;
   font-size: 1.5rem;
-  font-weight: 900;
+  font-weight: 550;
   color: var(--clr-primary);
   cursor: pointer;
 }
