@@ -18,7 +18,15 @@ const tasksContainer = document.querySelector("[data-tasks]");
 const taskTemplate = document.getElementById("task-template");
 const newTaskForm = document.querySelector("[data-new-task-form]");
 const newTaskInput = document.querySelector("[data-new-task-input]");
-const clearCompleteTasksButton = document.querySelector("[data-clear-complete-tasks-button]");
+const clearCompleteTasksButton = document.querySelector(
+  "[data-clear-complete-tasks-button]"
+);
+const taskCreatorButton = document.querySelector(
+  "[data-plus-button-task-creator]"
+);
+const listCreatorButton = document.querySelector(
+  "[data-plus-button-list-creator]"
+);
 
 //  let selectedListID = 0;
 /***************************  DECLARATIONS END ******************************/
@@ -26,13 +34,10 @@ const clearCompleteTasksButton = document.querySelector("[data-clear-complete-ta
 /***************************  EVENT LISTENERS START ******************************/
 
 newListForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const listName = newListInput.value;
-  if (listName === "" || listName == null) return;
-  const list = createList(listName);
-  newListInput.value = null;
-  lists.push(list);
-  saveAndRender();
+  addNewList(e);
+});
+listCreatorButton.addEventListener("click", (e) => {
+  addNewList(e);
 });
 listsContainer.addEventListener("click", (e) => {
   selectedListID = e.target.closest(".list-name").dataset.listId;
@@ -50,14 +55,10 @@ deleteListButton.addEventListener("click", (e) => {
 });
 
 newTaskForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const taskName = newTaskInput.value;
-  if (taskName === "" || taskName == null) return;
-  const task = createTask(taskName);
-  newTaskInput.value = null;
-  const selectedList = lists.find((list) => list.id === selectedListID);
-  selectedList.tasks.push(task);
-  saveAndRender();
+  addNewTask(e);
+});
+taskCreatorButton.addEventListener("click", (e) => {
+  addNewTask(e);
 });
 tasksContainer.addEventListener("click", (e) => {
   console.log(e.target);
@@ -71,11 +72,11 @@ tasksContainer.addEventListener("click", (e) => {
     renderTaskCount(selectedList);
   }
 });
-clearCompleteTasksButton.addEventListener("click", e => {
-  const selectedList = lists.find(list => list.id === selectedListID);
-  selectedList.tasks = selectedList.tasks.filter(task => !task.complete);
+clearCompleteTasksButton.addEventListener("click", (e) => {
+  const selectedList = lists.find((list) => list.id === selectedListID);
+  selectedList.tasks = selectedList.tasks.filter((task) => !task.complete);
   saveAndRender();
-})
+});
 /***************************  EVENT LISTENERS END ******************************/
 
 /***************************  FUNCTIONS START ******************************/
@@ -152,6 +153,25 @@ function renderTask(selectedList) {
     label.append(task.name);
     tasksContainer.appendChild(taskElement);
   });
+}
+function addNewList(e) {
+  e.preventDefault();
+  const listName = newListInput.value;
+  if (listName === "" || listName == null) return;
+  const list = createList(listName);
+  newListInput.value = null;
+  lists.push(list);
+  saveAndRender();
+}
+function addNewTask(e) {
+  e.preventDefault();
+  const taskName = newTaskInput.value;
+  if (taskName === "" || taskName == null) return;
+  const task = createTask(taskName);
+  newTaskInput.value = null;
+  const selectedList = lists.find((list) => list.id === selectedListID);
+  selectedList.tasks.push(task);
+  saveAndRender();
 }
 /***************************  FUNCTIONS END******************************/
 

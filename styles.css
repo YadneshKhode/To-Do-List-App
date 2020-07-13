@@ -18,7 +18,6 @@ button {
 body {
   font-family: "Work Sans", sans-serif;
   font-weight: 300;
-  font-size: 1.5rem;
   background-color: var(--clr-primary);
   color: white;
 }
@@ -64,9 +63,9 @@ input[type="checkbox"] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 /**************/
@@ -77,10 +76,6 @@ input[type="checkbox"] {
   letter-spacing: 1px;
   cursor: pointer;
   margin-top: -0.1rem;
-}
-
-.all-tasks {
-  width: 40%;
 }
 
 .task-list {
@@ -100,6 +95,7 @@ input[type="checkbox"] {
   -webkit-transition: border-bottom-width 150ms ease-in;
   transition: border-bottom-width 150ms ease-in;
   padding: 0.25rem;
+  width: 75%;
 }
 
 .new:focus::-webkit-input-placeholder {
@@ -130,6 +126,7 @@ input[type="checkbox"] {
 
 .new.list {
   font-size: 1.1rem;
+  width: 74%;
 }
 
 .todo-header {
@@ -147,7 +144,6 @@ input[type="checkbox"] {
 }
 
 .todo-list {
-  width: 50%;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -170,6 +166,7 @@ input[type="checkbox"] {
   font-weight: 900;
   outline: none;
   color: inherit;
+  line-height: 0.1rem;
 }
 
 .list-title {
@@ -249,7 +246,7 @@ input[type="checkbox"] {
 
 .delete-stuff {
   position: absolute;
-  bottom: -70px;
+  bottom: -130px;
   color: #e4e4e4;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -259,6 +256,15 @@ input[type="checkbox"] {
           justify-content: space-between;
   left: 0;
   width: 100%;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-content: space-between;
 }
 
 .btn.delete {
@@ -269,11 +275,13 @@ input[type="checkbox"] {
   background-color: white;
   color: black;
   border-radius: 20px;
-  padding: 1rem;
+  padding: 10px 1.5rem;
   -webkit-transition: color 200ms ease-in-out, -webkit-transform 250ms ease-out;
   transition: color 200ms ease-in-out, -webkit-transform 250ms ease-out;
   transition: color 200ms ease-in-out, transform 250ms ease-out;
   transition: color 200ms ease-in-out, transform 250ms ease-out, -webkit-transform 250ms ease-out;
+  margin-bottom: 1rem;
+  width: 100%;
 }
 
 .task::after {
@@ -284,7 +292,7 @@ input[type="checkbox"] {
   right: 0;
   opacity: 0.1;
   left: 0;
-  bottom: 2rem;
+  bottom: 1.3rem;
 }
 
 .task label::after {
@@ -351,6 +359,18 @@ input[type="checkbox"] {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .btn.delete {
+    font-size: 0.7rem;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .btn.delete {
+    font-size: 0.6rem;
   }
 }
 /*# sourceMappingURL=styles.css.map */

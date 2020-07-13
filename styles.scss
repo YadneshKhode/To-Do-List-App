@@ -18,7 +18,7 @@ button {
 body {
   font-family: "Work Sans", sans-serif;
   font-weight: 300;
-  font-size: 1.5rem;
+  // font-size: 1.5rem;
   background-color: var(--clr-primary);
   color: white;
 }
@@ -47,7 +47,7 @@ input[type="checkbox"] {
 
 .parent {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 /**************/
@@ -60,9 +60,6 @@ input[type="checkbox"] {
   margin-top: -0.1rem;
 }
 
-.all-tasks {
-  width: 40%;
-}
 
 .task-list {
   line-height: 2;
@@ -80,6 +77,7 @@ input[type="checkbox"] {
   outline: none;
   transition: border-bottom-width 150ms ease-in;
   padding: 0.25rem;
+  width: 75%;
 }
 
 .new:focus::placeholder {
@@ -98,6 +96,7 @@ input[type="checkbox"] {
 
 .new.list {
   font-size: 1.1rem;
+  width: 74%;
 }
 
 .todo-header {
@@ -109,7 +108,6 @@ input[type="checkbox"] {
 }
 
 .todo-list {
-  width: 50%;
   justify-content: flex-start;
   background-color: white;
   color: black;
@@ -128,6 +126,7 @@ input[type="checkbox"] {
   font-weight: 900;
   outline: none;
   color: inherit;
+  line-height: 0.1rem;
 }
 
 
@@ -197,12 +196,18 @@ input[type="checkbox"] {
 
 .delete-stuff {
   position: absolute;
-  bottom: -70px;
+  bottom: -130px;
   color: #e4e4e4;
   display: flex;
   justify-content: space-between;
   left: 0;
   width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
 }
 
 .btn.delete {
@@ -213,8 +218,10 @@ input[type="checkbox"] {
   background-color: white;
   color: black;
   border-radius: 20px;
-  padding: 1rem;
+  padding: 10px 1.5rem;
   transition: color 200ms ease-in-out, transform 250ms ease-out;
+  margin-bottom: 1rem;
+  width: 100%;
 }
 
 .task::after {
@@ -225,7 +232,7 @@ input[type="checkbox"] {
   right: 0;
   opacity: 0.1;
   left: 0;
-  bottom: 2rem;
+  bottom: 1.3rem;
 }
 
 .task label::after {
@@ -284,8 +291,19 @@ input[type="checkbox"] {
   .all-tasks {
     align-items: center;
   }
+
 }
 
-@media only screen and (max-width: 540px) {}
+@media only screen and (max-width: 540px) {
+  .btn.delete {
+  font-size: 0.7rem;
+  }
 
-@media only screen and (max-width: 320px) {}
+}
+
+@media only screen and (max-width: 320px) {
+  .btn.delete {
+    font-size: 0.6rem;
+  }
+
+}
