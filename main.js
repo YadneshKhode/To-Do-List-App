@@ -46,6 +46,8 @@ listCreatorButton.addEventListener("click", (e) => {
 });
 listsContainer.addEventListener("click", (e) => {
   selectedListID = e.target.closest(".list-name").dataset.listId;
+  let scrollToTaskList = document.getElementById("comeHere");
+  scrollToTaskList.scrollIntoView();
   console.log(selectedListID);
   saveAndRender();
   // if (e.target.tagName.toLowerCase() === "li") {

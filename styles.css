@@ -80,6 +80,7 @@ input[type="checkbox"] {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  margin-bottom: 5rem;
 }
 
 /*for wrapper*/
