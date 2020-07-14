@@ -1,5 +1,21 @@
 html {
+  position: relative;
   min-height: 100%;
+}
+
+body {
+  margin: 0 0 100px;
+  bottom: 100px;
+}
+
+footer {
+  background-color: var(--clr-primary);
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  height: 30px;
+  width: 100%;
+  overflow: hidden;
 }
 
 :root {
@@ -302,6 +318,10 @@ input[type="checkbox"] {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-bottom: 50px;
 }
 
 .btn.delete {
@@ -368,8 +388,6 @@ input[type="checkbox"] {
 }
 
 footer {
-  margin-top: 5rem;
-  bottom: 0;
   font-size: 0.4rem;
 }
 

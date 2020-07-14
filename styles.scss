@@ -1,5 +1,21 @@
-html{
-  min-height:100%
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0 0 100px;
+    bottom : 100px; 
+}
+
+footer {
+    background-color:   var(--clr-primary);
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    height: 30px;
+    width: 100%;
+    overflow: hidden;
 }
 :root {
   --clr-primary: #192a56;
@@ -21,10 +37,8 @@ button {
 body {
   font-family: "Work Sans", sans-serif;
   font-weight: 300;
-  // font-size: 1.5rem;
   background-color: var(--clr-primary);
   color: white;
-  // min-height: 100vh;
 }
 
 ::placeholder {
@@ -232,6 +246,8 @@ input[type="checkbox"] {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  height: fit-content;
+  margin-bottom: 50px;
 }
 
 .btn.delete {
@@ -288,8 +304,6 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 footer{
-  margin-top:5rem;
-  bottom: 0;
   font-size:0.4rem
 }
 @media only screen and (min-width: 1024px) {
@@ -319,7 +333,9 @@ footer{
   }
 }
 
-@media only screen and (max-width: 995px) {}
+@media only screen and (max-width: 995px) {
+ 
+}
 
 @media only screen and (max-width: 767px) {
   .parent-todo-list {
@@ -357,5 +373,6 @@ footer{
   .btn.delete {
     font-size: 0.6rem;
   }
+ 
 
 }
