@@ -12,8 +12,8 @@ footer {
   background-color: var(--clr-primary);
   position: absolute;
   left: 0;
-  bottom: 10px;
-  height: 30px;
+  bottom: 30px;
+  height: 40px;
   width: 100%;
   overflow: hidden;
 }
@@ -321,7 +321,7 @@ input[type="checkbox"] {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 .btn.delete {
